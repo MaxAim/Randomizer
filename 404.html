@@ -11,7 +11,7 @@
 <script>
     const max = window.location.toString().slice(36) || 100;
     const number = document.getElementsByTagName("h1")[0];
-    number.innerHTML = Math.floor(Math.random() * 100) + 1;
+    number.innerHTML = Math.floor(Math.random() * max) + 1;
     if (localStorage.length == 0) {
         localStorage[0] = 0;
     }
