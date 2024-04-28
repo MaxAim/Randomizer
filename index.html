@@ -9,7 +9,7 @@
     <h1>Loading...</h1>
 </body>
 <script>
-    const max = window.location.toString().slice(22) || 100;
+    const max = 100;
     const number = document.getElementsByTagName("h1")[0];
     number.innerHTML = Math.floor(Math.random() * 100) + 1;
     if (localStorage.length == 0) {
