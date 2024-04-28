@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loading...</h1>
+</body>
+<script>
+    const max = window.location.toString().slice(22) || 100;
+    const number = document.getElementsByTagName("h1")[0];
+    number.innerHTML = Math.floor(Math.random() * 100) + 1;
+    if (localStorage.length == 0) {
+        localStorage[0] = 0;
+    }
+    if(localStorage[0] == 2){
+        number.innerHTML = "Num";
+    }
+    localStorage[0]++;
+    var KeyA = KeyC = KeyP = false;
+    document.addEventListener("keydown", event => {
+        switch (event.code) {
+            case "KeyA":
+                KeyA = true;
+                break;
+                case "KeyC":
+                KeyC = true;
+                break;
+                case "KeyP":
+                KeyP = true;
+                break;
+            default:
+                break;
+        }
+        if (KeyA && KeyC && KeyP) {
+            console.log("Cleared");
+            localStorage.clear();
+        }
+    });
+    document.addEventListener("keyup", event => {
+        switch (event.code) {
+            case "KeyA":
+                KeyA = false;
+                break;
+                case "KeyC":
+                KeyC = false;
+                break;
+                case "KeyP":
+                KeyP = false;
+                break;
+            default:
+                break;
+        }
+    });
+</script>
+<style>
+    html, body, h1{
+        height: 100%;
+        margin: 0;
+    }
+    html{
+        background-color: black;
+    }
+    h1{
+        font-size: 40vw;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+</style>
+</html>
